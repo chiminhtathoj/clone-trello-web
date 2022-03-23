@@ -2,27 +2,59 @@ import React from "react";
 import "./Column.scss";
 import Card from "components/Card/Card";
 import { mapOrder } from "utilities/sorts";
-function Column(props){
-    const {column} = props;
-    const cards = mapOrder(column.cards,column.cardOrder,"id");
-   
+import { Container, Draggable } from "react-smooth-dnd";
+function Column(props) {
+    const { column } = props;
+    const cards = mapOrder(column.cards, column.cardOrder, "id");
+    const onCardDrop = (dropResult) => {
+        console.log("drop result", dropResult);
+    }
+
     return (
         <>
-        <div className="column">
-        <header>{column.title} </header>
-        <ul className="card-list">
-           {cards && cards.length > 0 && cards.map((card,index)=>{
-               return (
-                   <Card 
-                    card = {card}
-                    key={card.id}
-                   />
-               )
-           })}
-        </ul>
-        <footer>add card</footer>
-    </div>
-    </>
+            <div className="column ">
+                <header className="column-drag-handle">{column.title} </header>
+                <div className="card-list">
+                    <Container
+                        {...column.props}
+                        groupName="col"
+                        onDragStart={e => console.log("drag started", e)}
+                        onDragEnd={e => console.log("drag end", e)}
+                        onDrop={onCardDrop}
+                        getChildPayload={index =>
+                            cards[index]
+                        }
+                        dragClass="card-ghost"
+                        dropClass="card-ghost-drop"
+                        onDragEnter={() => {
+                            console.log("drag enter:", column.id);
+                        }}
+                        onDragLeave={() => {
+                            console.log("drag leave:", column.id);
+                        }}
+                        onDropReady={p => console.log('Drop ready: ', p)}
+                        dropPlaceholder={{
+                            animationDuration: 150,
+                            showOnTop: true,
+                            className: 'drop-preview'
+                        }}
+                        dropPlaceholderAnimationDuration={200}
+                    >
+                        {cards && cards.length > 0 && cards.map((card, index) => {
+                            return (
+                                <Draggable key={card.id}>
+                                        <Card
+                                            card={card}
+                                        />
+                                </Draggable>
+                            )
+                        })}
+                    </Container>
+                </div>
+
+                <footer>add card</footer>
+            </div>
+        </>
     )
 }
 
