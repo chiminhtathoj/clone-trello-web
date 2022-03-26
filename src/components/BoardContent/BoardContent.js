@@ -40,7 +40,7 @@ function BoardContent() {
                 dropPlaceholder={{
                     animationDuration: 150,
                     showOnTop: true,
-                    className: 'cards-drop-preview'
+                    className: 'columns-drop-preview'
                 }}
             >
                 {columns && columns.length > 0 && columns.map((column) => {

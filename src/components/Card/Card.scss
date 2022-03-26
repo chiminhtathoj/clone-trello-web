@@ -3,15 +3,15 @@ $cards-bg-color: white;
 $card-border-radius: 4px;
 
 div.card-item {
-    background-color: $cards-bg-color;
-    padding: $gap;
-    border-radius: $card-border-radius;
-    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
-    &:not(:last-child) {
-      margin-bottom: $gap;
-    }
-    img {
-      display: block;
-      width: 100%;
-    }
+  background-color: $cards-bg-color;
+  padding: $gap;
+  border-radius: $card-border-radius;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  margin-bottom: $gap;
+  img {
+    display: block;
+    width: 100%;
   }
+}

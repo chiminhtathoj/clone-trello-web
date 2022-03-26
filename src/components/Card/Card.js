@@ -8,7 +8,9 @@ function Card(props) {
         <div className="card-item">
           {
               card.image &&
-             <img className="card-cover" src={card.image} alt={card.title} />
+             <img className="card-cover" src={card.image} alt={card.title}
+                onMouseDown={e => e.preventDefault()}
+             />
           }
           {
               card.title

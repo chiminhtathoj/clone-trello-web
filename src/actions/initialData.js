@@ -31,6 +31,24 @@ export const initialData = {
                         {
                             id: "card-7", boardId: "board-1", columnId: "column-1", title: "Title of card 7", image: null
                         },
+                        {
+                            id: "card-8", boardId: "board-1", columnId: "column-1", title: "Title of card 8", image: null
+                        },
+                        {
+                            id: "card-9", boardId: "board-1", columnId: "column-1", title: "Title of card 9", image: null
+                        },
+                        {
+                            id: "card-10", boardId: "board-1", columnId: "column-1", title: "Title of card 10", image: null
+                        },
+                        {
+                            id: "card-11", boardId: "board-1", columnId: "column-1", title: "Title of card 11", image: null
+                        },
+                        {
+                            id: "card-12", boardId: "board-1", columnId: "column-1", title: "Title of card 12", image: null
+                        },
+                        {
+                            id: "card-13", boardId: "board-1", columnId: "column-1", title: "Title of card 13", image:"https://scontent.fdad1-2.fna.fbcdn.net/v/t1.6435-9/165869891_1125869027887737_2609379682427357032_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=5IkM6up-lMQAX-MTD7Q&_nc_ht=scontent.fdad1-2.fna&oh=00_AT_UfcQqiDiCt3OIS35b184p6Bh1NT0d1mIwSGulCVs-yQ&oe=6257A3D8"
+                        },
                     ]
                 },
                 {
